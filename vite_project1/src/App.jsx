@@ -1,13 +1,19 @@
-
+import Chai from "./pro"
 
 
 
 
 
 function App() {
+
  
   return (
-    <h1> Prodipta Nayeb</h1>
+    <>
+    <p> I am the boss</p>
+    <Chai/>
+    <h3>hello! bro</h3>
+    </>
+    
   )
 }
 
