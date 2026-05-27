@@ -1,6 +1,11 @@
+import Hot from "./exp";
+
 function App() {
   return (
-    <h1>Prodipta</h1>
+    <>
+    <Hot/>
+    </>
+   
   );
 }
 
