@@ -6,10 +6,13 @@ import Chai from "./pro"
 
 function App() {
 
- 
+ const username= "Prodipta Nayeb";
   return (
     <>
-    <p> I am the boss</p>
+  {/*{useranme}--> Evaluated expression--> we donot write the entire 
+  javascript but the final output which is evaluated we write that..*/}
+
+    <p> I am the boss{username}</p>   
     <Chai/>
     <h3>hello! bro</h3>
     </>
@@ -18,3 +21,4 @@ function App() {
 }
 
 export default App
+// <> </> ---> this is known as creating fragments
