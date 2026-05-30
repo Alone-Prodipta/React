@@ -13,11 +13,11 @@ function App()
   //let counter= 5;
   const add= () =>{
     //counter+= 1;
-    setCounter(counter+100);
+    setCounter(counter+1);
     console.log("clicked",counter);
   }
   const minus= ()=>{
-    setCounter(counter-50);
+    setCounter(counter-1);
     console.log("clicked",counter);
   }
   return (
