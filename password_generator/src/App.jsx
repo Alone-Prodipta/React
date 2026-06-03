@@ -10,7 +10,8 @@ function App()
   //use ref hook
   const passwordRef= useRef(null);
 
-  const PasswordGenerator= useCallback(()=>{
+  const PasswordGenerator= useCallback(()=>{ 
+    //usecallback actually memorizes the data in the cache or memory as much as possible.
     let pass="";
     let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if(digits)
@@ -37,6 +38,7 @@ function App()
   
   //code is running from here serves as main goal of running.
   useEffect(()=> {
+    // when some thing changes or the page reloads it actually re-runs every time.
     PasswordGenerator();
   },[length,digits,charecter,PasswordGenerator]);
   return (
