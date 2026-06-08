@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useId } from "react";
 function InputBox({
     label,
     amount,
@@ -16,7 +16,7 @@ function InputBox({
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
             <div className="w-1/2">
-                <label  htmlfor={amountInputId} className="text-black/40 mb-2 inline-block">
+                <label  htmlFor={amountInputId} className="text-black/40 mb-2 inline-block">
                     {label}
                 </label>
                 <input

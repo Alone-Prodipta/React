@@ -9,7 +9,7 @@ function App() {
   const [from, setFrom] = useState("inr");
   const [to, setTo] = useState("usd");
   const [convert, setConvert] = useState(0);
-  const currencyinfo = useCurrencyInfo(from);
+  const currencyinfo = useCurrencyInfo(from)||{};
   const option = Object.keys(currencyinfo);
   const swap = () => {
     setFrom(to);
@@ -17,8 +17,8 @@ function App() {
     setConvert(amount);
     setAmount(convert)
   }
-  convert =() => {
-    setConvert(amount * currencyinfo[to]);
+  const convert_money =() => {
+    setConvert(amount * currencyInfo[to]);
   }
 
 
@@ -34,7 +34,7 @@ function App() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                convert();
+                convert_money();
               }}
             >
               <div className="w-full mb-1">
@@ -58,7 +58,7 @@ function App() {
               <div className="w-full mt-1 mb-4">
                 <InputBox
                   label="To"
-                  amount= {counvert}
+                  amount= {convert}
                   currecyOptions= {option}
                   oncurrencychange={(currency)=>setTo(currency)}
                   selectCurrency= {from}
