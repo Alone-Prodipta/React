@@ -1,14 +1,10 @@
 # router
 
-> A React web application showcasing declarative client-side routing with React Router.
-
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 
 ## 📑 Table of Contents
 
 - [Description](#description)
-- [Key Features](#key-features)
-- [Use Cases](#use-cases)
 - [Tech Stack](#tech-stack)
 - [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
@@ -18,18 +14,7 @@
 
 ## 📝 Description
 
-The router project is a React-based single-page application built on top of the Vite tooling ecosystem. It provides a simple, structured codebase designed to handle client-side navigation without triggering full page reloads, ensuring a smooth transition between different sections of the website.
-
-## ✨ Key Features
-
-- **🛣️ Declarative Client-Side Routing** — Configures navigation paths using react-router-dom's createBrowserRouter to map URLs to specific components.
-- **📐 Structured Layout Nesting** — Organizes child views under a single root Index component to facilitate persistent layouts across navigation changes.
-- **⚛️ React Root Rendering** — Initializes and mounts the router provider directly into the DOM root wrapped in React StrictMode.
-
-## 🎯 Use Cases
-
-- Building a multi-page React single-page application with instant client-side transitions.
-- Developing a baseline template for projects requiring nested layouts and React Router integration.
+router — a cli tool built with JavaScript, Node.js, Vite.
 
 ## 🛠️ Tech Stack
 
@@ -69,6 +54,8 @@ router
 │   │   │   └── contact.jsx
 │   │   ├── footer
 │   │   │   └── footer.jsx
+│   │   ├── github
+│   │   │   └── github.jsx
 │   │   ├── header
 │   │   │   └── header.jsx
 │   │   └── home
@@ -97,3 +84,10 @@ Contributions are welcome! Here's the standard flow:
 6. **Open** a pull request
 
 Please follow the existing code style and include tests for new behavior where applicable.
+
+## 📜 License
+
+This project is licensed under the **MIT** License.
+
+---
+*This README was generated with ❤️ by [ReadmeBuddy](https://readmebuddy.com)*
