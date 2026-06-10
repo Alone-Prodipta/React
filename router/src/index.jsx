@@ -1,16 +1,15 @@
-import React from "react";
-import header from './components/header/header.jsx';
-import footer from './components/footer/footer.jsx';
+import Header from './components/header/header.jsx';
+import Footer from './components/footer/footer.jsx';
+import { Outlet } from 'react-router-dom';
 
-import { Outlet } from "react-router-dom";
- function Index()
- {
-    return(
-        <>
-            <header />
-            <Outlet />
-            <footer />
-        </>
-    )
- }
- export default Index;
+function Index()
+{
+   return(
+       <>
+           <Header />
+           <Outlet />
+           <Footer />
+       </>
+   )
+}
+export default Index;
