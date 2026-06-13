@@ -1,19 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-import usercontextProvider from './context/userContextProvider';
-import Login from './components/login';
+import UserContextProvider from './context/userContextProvider';
+import Login from './components/Login';
 import Profile from './components/profile';
 
-function App() 
-{
+function App() {
   return (
     <>
-      <usercontextProvider>
-        
+      <UserContextProvider>
         <h1>Hello World!</h1>
-        <Login/>
-        <Profile/>
-      </usercontextProvider>
+        <Login />
+        <Profile />
+      </UserContextProvider>
     </>
   )
 }
