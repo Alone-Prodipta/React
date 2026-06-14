@@ -1,28 +1,42 @@
-import { useState } from 'react'
+import { useState ,useEffect} from 'react';
+import Card from './components/Card';
+import './App.css';
+import { ThemeProvider } from './context/Theme';
+import ThemeBtn from './components/ThemeBtn';
+
+function App() 
+{
+  const [themeMode, setThemeMode]= useState("light");
+  const lighttheme=()=>{
+    setThemeMode("light");
+  }
+  const darktheme=()=> {
+    setThemeMode("dark");
+  }
+  //actual change in thme
+
+  useEffect(()=>{
+    document.querySelector("html").classList.remove("light","dark");
+    document.querySelector("html").classList.add(themeMode)
+  },[themeMode]);
 
 
-import './App.css'
-
-function App() {
-  const [color, setColor] = useState("white");
 
   return (
     <>
-      <div className="w-full h-screen duration-200"style={{backgroundColor: color}}>
-        <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2 gap-10">
-          
-            <button onClick={()=>setColor("lavender")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"lavender"}}>lavender</button>
-            <button onClick={()=>setColor("red")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"red"}}>red</button>
-            <button onClick={()=>setColor("yellow")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"yellow"}}>yellow</button>
-            <button onClick={()=>setColor("green")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"green"}}>green</button>
-            <button onClick={()=>setColor("orange")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"orange"}}>orange</button>
-            <button onClick={()=>setColor("grey")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"grey"}}>grey</button>
-            <button onClick={()=>setColor("cyan")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"cyan"}}>cyan</button>
-            <button onClick={()=>setColor("pink")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"pink"}}>pink</button>
-            <button onClick={()=>setColor("violet")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"violet"}}>violet</button>
-            <button onClick={()=>setColor("brown")}className="p-3 bg-white rounded-xl" style={{backgroundColor:"brown"}}>brown</button>          
+    <ThemeProvider value={{themeMode,lighttheme,darktheme}}>
+      <div className="flex flex-wrap min-h-screen items-center">
+        <div className="w-full">
+          <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
+             <ThemeBtn />
+          </div>
+
+          <div className="w-full max-w-sm mx-auto">
+              <Card />
+          </div>
         </div>
       </div>
+    </ThemeProvider>
     </>
   )
 }
