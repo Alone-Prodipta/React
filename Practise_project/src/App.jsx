@@ -4,7 +4,7 @@ import Background from './components/background';
 import Foreground from './components/foreground';
 function App() 
 {
-  const [count, setCount] = useState(0);
+
 
   return (
     <>
