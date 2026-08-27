@@ -8,10 +8,9 @@ function App()
 
   return (
     <>
-     <div className="w-full h-screen relative bg-zinc-800">
+     <div className="w-screen h-screen relative bg-zinc-800 overflow-hidden">
       
         <Background />
-       
         <Foreground />
      </div>
     </>

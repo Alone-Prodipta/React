@@ -1,21 +1,22 @@
 import React from "react";
+import { useRef } from "react";
 import { HiDocumentAdd } from "react-icons/hi";
-import { LuDownload } from "react-icons/lu";
 import { motion } from "motion/react";
-function Cards() {
-   // const ref= useRef(null);
-    // Create an array of elements using a for loop
+function Cards({ reference }) 
+{   
     let items = [];
-    for (let i = 1; i <= 1; i++) {
+    for (let i = 1; i <=10; i++) 
+    {
         items.push(
-            <motion.div drag key={i} className="relative w-50 h-70 bg-white rounded-2xl p-2 m-3 my-7 text-black text-2xl float-left overflow-hidden">
+            <motion.div drag dragConstraints={reference}
+            dragElastic={0.1}
+            dragTransition={{bounceStiffness:600, bounceDamping:10}} key={i} className="relative w-50 h-70 bg-white rounded-2xl p-2 m-3 my-7 text-black text-2xl float-left overflow-hidden">
                 <HiDocumentAdd />
-                <p className="text-sm mt-5 text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, voluptatibus?</p>
-
-                <footer className="absolute bottom-15 bg-white w-full h-10 left-0 items-center flex justify-between">
-                    <h5 className="text-black text-sm font-bold mx-2 my-4">0.4mb</h5>
-                    <LuDownload />
-                </footer>
+                <textarea
+                    placeholder="Write something..."
+                    className="text-sm mt-5 w-full h-35 resize-none bg-transparent outline-none text-black"/>
+                
+                
                 <footer className="absolute bottom-0 bg-blue-700 w-full h-15 left-0">
 
                 </footer>
