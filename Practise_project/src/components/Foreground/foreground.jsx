@@ -10,10 +10,10 @@ import {
     addEdge,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import Cards from "./card";
+import Cards from "../card";
 
 
-function CardNodeWrapper() {
+function CardNodeWrapper({ data }) {
     return (
         <div className="relative inline-block">
             
@@ -37,19 +37,19 @@ function CardNodeWrapper() {
             <Handle
                 type="target"
                 position={Position.Left}
-                className="!w-4 !h-4 !bg-blue-600 !border-2 !border-white z-50 cursor-crosshair !top-1/2 !-translate-y-1/2 !-left-2"
+                className="w-4! h-4! bg-blue-600! border-2! border-white! z-50 cursor-crosshair top-1/2! -translate-y-1/2! -left-2!"
             />
 
            
             <div className="card-node-content">
-                <Cards />
+                <Cards color={data?.color} quantity={data?.quantity} />
             </div>
 
             
             <Handle
                 type="source"
                 position={Position.Right}
-                className="!w-4 !h-4 !bg-blue-600 !border-2 !border-white z-50 cursor-crosshair !top-1/2 !-translate-y-1/2 !-right-2"
+                className="w-4! h-4! bg-blue-600! border-2! border-white! z-50 cursor-crosshair top-1/2! -translate-y-1/2! -right-2!"
             />
         </div>
     );
@@ -79,7 +79,7 @@ function Foreground() {
         (connection) =>
             setEdges((eds) =>
                 addEdge(
-                    { ...connection, animated: true, style: { stroke: "#2563eb", strokeWidth: 3 } },
+                    { ...connection, animated: false, style: { stroke: "white", strokeWidth: 3 } },
                     eds
                 )
             ),
@@ -87,7 +87,7 @@ function Foreground() {
     );
 
     return (
-        <div className="fixed z-[3] top-0 left-0 w-screen h-screen">
+        <div className="fixed z-3 top-0 left-0 w-screen h-screen bg-zinc-800">
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -96,7 +96,7 @@ function Foreground() {
                 onConnect={onConnect}
                 nodeTypes={nodeTypes}
                 fitView>
-                <Background color="#3f3f46" gap={20} />
+                <Background color="white" gap={20} />
                 <Controls />
             </ReactFlow>
         </div>
